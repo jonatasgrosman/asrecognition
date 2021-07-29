@@ -1,7 +1,7 @@
 [tool.poetry]
 name = "ASRecognition"
-version = "0.0.1"
-description = "ASRecognition is just an easy-to-use tool for Automatic Speech Recognition."
+version = "0.0.2"
+description = "ASRecognition: just an easy-to-use library for Automatic Speech Recognition."
 authors = ["Jonatas Grosman <jonatasgrosman@gmail.com>"]
 maintainers = ["Jonatas Grosman <jonatasgrosman@gmail.com>"]
 license = "MIT"

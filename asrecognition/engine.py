@@ -7,6 +7,7 @@ from typing import List, Dict, Optional
 from transformers import Wav2Vec2ForCTC, Wav2Vec2Processor
 
 MODEL_PATH_BY_LANGUAGE = {
+    "ar": "jonatasgrosman/wav2vec2-large-xlsr-53-arabic",
     "de": "jonatasgrosman/wav2vec2-large-xlsr-53-german",
     "el": "jonatasgrosman/wav2vec2-large-xlsr-53-greek",
     "en": "jonatasgrosman/wav2vec2-large-xlsr-53-english",
@@ -35,7 +36,7 @@ class ASREngine():
         ----------
         language : str 
             Language code of the speech to be transcribed. 
-            The supported languages are: de, el, en, es, fa, fi, fr, hu, it, ja, nl, pl, pt, ru, zh-CN
+            The supported languages are ar, de, el, en, es, fa, fi, fr, hu, it, ja, nl, pl, pt, ru, zh-CN
 
         device : str 
             Device to use for inference, default is "cpu". If you want to use a GPU for that, 
