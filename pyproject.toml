@@ -1,0 +1,56 @@
+[tool.poetry]
+name = "ASRecognition"
+version = "0.0.1"
+description = "ASRecognition is just an easy-to-use tool for Automatic Speech Recognition."
+authors = ["Jonatas Grosman <jonatasgrosman@gmail.com>"]
+maintainers = ["Jonatas Grosman <jonatasgrosman@gmail.com>"]
+license = "MIT"
+readme = "README.md"
+homepage = "https://github.com/jonatasgrosman/asrecognition"
+repository = "https://github.com/jonatasgrosman/asrecognition"
+documentation = "https://github.com/jonatasgrosman/asrecognition"
+keywords = ["audio", "speech", "automatic speech recognition", "asr", "voice recognition", "speech recognition", "speech-to-text"]
+
+[tool.poetry.urls]
+issues = "https://github.com/jonatasgrosman/asrecognition/issues"
+
+[tool.poetry.dependencies]
+python = "^3.7"
+transformers = "^4.9.1"
+torch = "^1.9.0"
+librosa = "^0.8.1"
+datasets = "^1.10.2"
+
+[tool.poetry.dev-dependencies]
+pytest = "^5.2"
+pytest-cov = "^2.10.1"
+pytest-randomly = "^3.4.1"
+coverage = {version = "^5.2.1", extras = ["toml"]}
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.pytest.ini_options]
+junit_family = "xunit2"
+minversion = "6.0"
+addopts = "-ra -q"
+testpaths = [
+    "tests"
+]
+
+[tool.coverage.run]
+source = ['.']
+omit = [
+    "asrecognition/__init__.py",
+]
+
+[tool.coverage.report]
+exclude_lines = [
+    "pragma: no cover",
+    "def __repr__",
+    "raise AssertionError",
+    "raise NotImplementedError",
+    "if 0:",
+    "if __name__ == .__main__.:"
+]
