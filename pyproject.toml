@@ -20,6 +20,8 @@ transformers = "^4.9.1"
 datasets = "^1.10.2"
 torch = "^1.9.0"
 librosa = "^0.8.1"
+numba = "^0.53.1"
+llvmlite = "^0.36.0"
 
 [tool.poetry.dev-dependencies]
 pytest = "^5.2"
