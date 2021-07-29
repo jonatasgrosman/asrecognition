@@ -15,11 +15,11 @@ keywords = ["audio", "speech", "automatic speech recognition", "asr", "voice rec
 issues = "https://github.com/jonatasgrosman/asrecognition/issues"
 
 [tool.poetry.dependencies]
-python = "^3.7"
+python = ">=3.7,<3.10"
 transformers = "^4.9.1"
+datasets = "^1.10.2"
 torch = "^1.9.0"
 librosa = "^0.8.1"
-datasets = "^1.10.2"
 
 [tool.poetry.dev-dependencies]
 pytest = "^5.2"
