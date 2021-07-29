@@ -23,21 +23,16 @@ from asrecognition import ASREngine
 asr = ASREngine("en")
 
 # 2 - Use the ASR engine to transcribe a list of audio files
-audio_paths = [
-    "/path/to/sagan.mp3",
-    "/path/to/asimov.wav",
-]
+audio_paths = ["/path/to/sagan.mp3", "/path/to/asimov.wav"]
 transcriptions = asr.transcribe(audio_paths)
 
 # 3 - Voilà!
 print(transcriptions)
 
-"""
-[
-    {"path": "/path/to/sagan.mp3", "transcription": "EXTRAORDINARY CLAIMS REQUIRE EXTRAORDINARY EVIDENCE"},
-    {"path": "/path/to/asimov.wav", "transcription": "VIOLENCE IS THE LAST REFUGE OF THE INCOMPETENT"},
-]
-"""
+# [
+#  {"path": "/path/to/sagan.mp3", "transcription": "EXTRAORDINARY CLAIMS REQUIRE EXTRAORDINARY EVIDENCE"},
+#  {"path": "/path/to/asimov.wav", "transcription": "VIOLENCE IS THE LAST REFUGE OF THE INCOMPETENT"}
+# ]
 ```
 # Want to help?
 
