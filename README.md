@@ -19,10 +19,10 @@ $ pip install asrecognition
 ```python
 from asrecognition import ASREngine
 
-# 1 - Load the ASR engine by a given language (on the first run it may take a while)
+# 1 - Load the ASR engine for a given language (on the first run it may take a while)
 asr = ASREngine("en")
 
-# 2 - Use the ASR engine to transcribe a list of audio files
+# 2 - Use the loaded ASR engine to transcribe a list of audio files
 audio_paths = ["/path/to/sagan.mp3", "/path/to/asimov.wav"]
 transcriptions = asr.transcribe(audio_paths)
 
