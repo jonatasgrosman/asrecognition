@@ -117,7 +117,10 @@ class ASREngine():
                 warnings.simplefilter("ignore")
                 inputs = processor(batch["waveform"], sampling_rate=16_000, return_tensors="pt", padding=True)
                 with torch.no_grad():
-                    logits = model(inputs.input_values.to(device)).logits
+                    if hasattr(inputs, "attention_mask"):
+                        logits = model(inputs.input_values.to(device), attention_mask=inputs.attention_mask.to(device)).logits
+                    else:
+                        logits = model(inputs.input_values.to(device)).logits
                 pred_ids = torch.argmax(logits, dim=-1)
                 batch["transcription"] = processor.batch_decode(pred_ids)
                 return batch
