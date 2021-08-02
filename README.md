@@ -2,6 +2,11 @@
 
 ASRecognition: just an easy-to-use library for Automatic Speech Recognition.
 
+I have no intention of building a very complex toolkit for speech recognition here. 
+In fact, this library uses a lot of things already built by the [Hugging Face](https://huggingface.co/) (Thank you guys!). 
+I just wanna have an easy-to-use interface to add speech recognition features to my apps.
+I hope this library could be useful for someone else too :)
+
 The currently supported languages are Arabic (ar), German (de), Greek (el), English (en), Spanish (es), Persian (fa), Finnish (fi), French (fr), Hungarian (hu), Italian (it), Japanese (ja), Dutch (nl), Polish (pl), Portuguese (pt), Russian (ru), Chinese (zh-CN).
 
 # Requirements
