@@ -59,6 +59,7 @@ class ASREngine():
         self.number_of_workers = number_of_workers
         self.inference_batch_size = inference_batch_size
         self.model_path = model_path
+        self.duration_warning_threshold_in_seconds = 40 # this is a little arbitrary and ugly. I know :D
 
         if self.model_path is None:
             self.model_path = MODEL_PATH_BY_LANGUAGE.get(self.language, None)
@@ -102,14 +103,14 @@ class ASREngine():
         
         data = data.map(_load_audio, num_proc=self.number_of_workers)
 
-        data_more_than_20s = data.filter(
-            lambda example: example["duration"] > 20,
+        warning_data = data.filter(
+            lambda example: example["duration"] > self.duration_warning_threshold_in_seconds,
             num_proc=self.number_of_workers
         )
 
-        if len(data_more_than_20s) > 0:
-            logging.warn(f"Some files ({data_more_than_20s['path']}) have more than 20 seconds.\n" \
-                f"To prevent performance issues we highly recommend you to split them into smaller chunks of less than 20 seconds."
+        if len(warning_data) > 0:
+            logging.warn(f"Some files ({warning_data['path']}) have more than {self.duration_warning_threshold_in_seconds} seconds.\n" \
+                f"To prevent memmory issues we highly recommend you to split them into smaller chunks of less than {self.duration_warning_threshold_in_seconds} seconds."
             )
 
         def _predict(batch, model=self.model, processor=self.processor, device=self.device):            
