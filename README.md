@@ -1,3 +1,5 @@
+**This tool is deprecated in favor of https://github.com/jonatasgrosman/huggingsound**
+
 # ASRecognition
 
 ASRecognition: just an easy-to-use library for Automatic Speech Recognition.
